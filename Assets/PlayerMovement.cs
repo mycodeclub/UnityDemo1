@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
     }
-   
+
     // Update is called once per frame
     void Update()
     {
@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-      //  rb.AddForce(0,0,speed * Time.deltaTime );
+        //  rb.AddForce(0,0,speed * Time.deltaTime );
         if (Input.GetKey("d"))
         {
             rb.AddForce(speed * Time.deltaTime, 0, 0);
@@ -33,9 +33,14 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(0, 0, speed * Time.deltaTime);
         }
-        if (Input.GetKey("a"))
+        if (Input.GetKey("s"))
         {
             rb.AddForce(0, 0, -speed * Time.deltaTime);
-        } 
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.name.Equals("")) { }
     }
 }
